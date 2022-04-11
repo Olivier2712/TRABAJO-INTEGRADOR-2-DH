@@ -1,0 +1,5 @@
+let productos = {
+    lista: [
+        {},{},{}
+    ]
+}
