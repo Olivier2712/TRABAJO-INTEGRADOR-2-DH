@@ -1,6 +1,5 @@
 /*====== Fonts ======*/
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:ital,wght@1,300&family=Roboto:ital,wght@1,300&display=swap');
 
 /*====== Variables ======*/
 :root {
@@ -10,7 +9,9 @@
   --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  --description-font-family: 'Montserrat', sans-serif;
+  --navtext-font-family: 'Raleway', sans-serif;
+  --titulo-font-family: 'Roboto', sans-serif;
 }
 
 
@@ -27,7 +28,7 @@ body {
 }
 
 body {
-  font-family: var(--base-font-family);
+  font-family:Raleway;
   font-weight: 300;
   background-color: var(--light-gray);
 }
@@ -68,7 +69,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color:rgb(173, 5, 173);
 }
 
 .main-header_home-link,
@@ -78,8 +79,11 @@ hr {
 
 .main-header_credit-link {
   font-size: 1.5em;
+  font-family:Montserrat;
   margin-top: 20px;
   text-align: center;
+  color:white;
+  
 }
 
 .search-form {
@@ -95,7 +99,8 @@ hr {
   padding: 7px 35px 7px 7px;
   border-radius: 3px;
   height: 40px;
-  font-size: 1.5em;
+  font-size: 2em;
+  font-family:Montserrat;
 }
 
 .search-form_button {
@@ -121,7 +126,6 @@ hr {
   display: block;
   margin: 20px auto 0;
 }
-
 .main-navbar {
   margin-top: 20px;
   display: none;
@@ -129,7 +133,9 @@ hr {
 
 .left-navbar,
 .right-navbar {
-  font-size: 1.5em;
+  font-size: 1.8em;
+  color:white;
+  font-family:Raleway;
 }
 
 .logout{
@@ -154,7 +160,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/images/banner_dos.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -171,7 +177,7 @@ hr {
 .products-title {
   font-size: 2.4em;
   font-weight: 400;
-  color: var(--gray);
+  color: black;
 }
 
 .product-box {
@@ -269,20 +275,24 @@ hr {
 }
 
 .footer-data i {
-  color: var(--light-blue);
+  color: rgb(173, 5, 173);
   font-size: 3.5em;
+  
 }
 
 .footer-data h2 {
   color: var(--gray);
   font-size: 2.4em;
   font-weight: 400;
+  font-family:Montserrat;
+  
 }
 
 .footer-data p {
   color: var(--gray);
   font-size: 1.5em;
   font-weight: 300;
+  font-family:Montserrat;
 }
 
 .sub-footer {
@@ -508,7 +518,7 @@ textarea.form-input {
 
   .left-navbar a:hover,
   .right-navbar a:hover {
-    color: var(--light-blue);
+    color: black;
   }
 
   .left-navbar li {
