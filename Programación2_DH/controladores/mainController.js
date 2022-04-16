@@ -7,4 +7,5 @@ const mainController = {
     res.render('index', { productos: productos.lista})},
   }
   
+  
   module.exports = mainController;

@@ -4,4 +4,5 @@ const productController = {
     resultadosBusqueda: function(req,res){res.render('search-results')}
 }
     
+
     module.exports = productController;
