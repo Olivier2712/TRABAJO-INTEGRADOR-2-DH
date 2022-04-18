@@ -1,16 +1,19 @@
+const productos = require("../data/productos")
+ 
 const userController = {
     
     registro: function(req,res){res.render('register')},
-    
+
     login: function(req,res){res.render('login')},
+
+    profile: function(req,res){res.render('profile',{producto: productos})},
     
-    profile: function(req,res){res.render('profile')},
-    
-    editProfile: function(req,res){
+     editProfile: function(req,res){
         res.render('profile-edit')
         res.render('index', { productos: productos.usuario})
-    
+   
     },
+
     
     mostrarDatosDeUsuario: function(req,res){
         let nombreDeUsuario = "Pepe Ganga";

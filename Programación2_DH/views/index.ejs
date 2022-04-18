@@ -4,8 +4,12 @@
 <head>
 
 	<!-- Header -->
-	<%- include('../views/partials/header.ejs')%>
-	<!-- /Header -->
+    <% if(logueado) { %>
+        <%- include('../views/partials/headerLogueado.ejs') %>
+    <% } else { %>
+        <%- include('../views/partials/header.ejs') %>
+    <% } %>
+    <!-- /Header -->
 
 
 	<meta charset="UTF-8">
@@ -47,22 +51,22 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 
-			 <% for(let i=0; i<8; i+=1) {%> 
-				<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/productos/productos">
-						<figure class="product-box_image">
-							<img src="images/products/default-image.png" alt="Jordan 1">
-						</figure>
-						<article class="product-box_data">
-							<h2> nombre del producto </h2>
-							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
-							<p>Comentarios: 12</p>
-						</article>
-					</a>
-				</section>
-			</div>			
-			<% } %>
+			<% for(let i=0; i<10; i++) {%>
+                <div class="col-12 col-sm-6 col-lg-3">
+                <section class="product-box">
+                    <a href="/productos/productos/">
+                        <figure class="product-box_image">
+                            <img src="./images/products/<%= producto.lista[i].imagen %>" alt="">
+                        </figure>
+                        <article class="product-box_data">
+                            <h2><%= producto.lista[i].modelo %></h2>
+                            <p> <%= producto.lista[i].descripcion %></p>
+                            <p>Comentarios: 12000</p>
+                        </article>
+                    </a>
+                </section>
+            </div>          
+            <% } %>
 
 			
 			
