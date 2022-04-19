@@ -3,7 +3,7 @@ const productos = {
         {
             id: 1,
             modelo: "jordan 1 ",
-            descripcion: " Partesuperior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
+            descripcion: " Parte superior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
             imagen: "jordan1.jpg",
             comentarios: [
                 {
@@ -17,7 +17,7 @@ const productos = {
         {
             id: 2,
             modelo: "Jordan x Off-White",
-            descripcion: " Partesuperior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
+            descripcion: " Parte superior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
             imagen: "jordan1.jpg",
             comentarios: [
                 {
@@ -30,7 +30,7 @@ const productos = {
         {
             id: 3,
             modelo: "Yeezy 700",
-            descripcion: " Partesuperior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
+            descripcion: " Parte superior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
             imagen: "jordan1.jpg",
             comentarios: [
                 {
@@ -43,7 +43,7 @@ const productos = {
         {
             id: 4,
             modelo: "Nike blazers",
-            descripcion: " Partesuperior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
+            descripcion: " Parte superior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
             imagen: "jordan1.jpg",
             comentarios: [
                 {
@@ -56,7 +56,7 @@ const productos = {
         {
             id: 5,
             modelo: "Human Race black",
-            descripcion: " Partesuperior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
+            descripcion: " Parte superior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
             imagen: "jordan1.jpg",
             comentarios: [
                 {
@@ -69,7 +69,7 @@ const productos = {
         {
             id: 6,
             modelo: "Jordan Retro",
-            descripcion: " Partesuperior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
+            descripcion: " Parte superior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
             imagen: "jordan1.jpg",
             comentarios: [
                 {
@@ -82,7 +82,7 @@ const productos = {
         {
             id: 7,
             modelo: "AirForce 1",
-            descripcion: " Partesuperior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
+            descripcion: " Parte superior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
             imagen: "jordan1.jpg",
             comentarios: [
                 {
@@ -95,7 +95,7 @@ const productos = {
         {
             id: 8,
             modelo: "Off-White vulcano",
-            descripcion: " Partesuperior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
+            descripcion: " Parte superior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
             imagen: "jordan1.jpg",
             comentarios: [
                 {
@@ -108,7 +108,7 @@ const productos = {
         {
             id: 9,
             modelo: "Nike air force max 1",
-            descripcion: " Partesuperior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
+            descripcion: " Parte superior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
             imagen: "jordan1.jpg",
             comentarios: [
                 {
@@ -121,7 +121,7 @@ const productos = {
         {
             id: 10,
             modelo: "Air Jordan 4 retro ",
-            descripcion: " Partesuperior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
+            descripcion: " Parte superior sintética y de cuero premium Forro textil para transpirabilidad y comodidad Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad Sistema de cordones clásico para un ajuste seguro y ajustable Suela de goma antideslizante duradera para un mejor agarre y tracción",
             imagen: "jordan1.jpg",
             comentarios: [
                 {
