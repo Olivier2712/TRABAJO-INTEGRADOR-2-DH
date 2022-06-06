@@ -1,5 +1,5 @@
 const productos = require("../data/productos.js")
-
+const db = require('../database/models');
 
 const mainController = {
   index: function(req, res, next) {
