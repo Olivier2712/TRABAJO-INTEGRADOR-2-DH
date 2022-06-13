@@ -1,0 +1,34 @@
+CREATE SCHEMA proeyctointeg;
+
+USE proeyctointeg;
+
+CREATE TABLE `usuarios` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `nombre_de_usuario` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `contrasenia` varchar(200) NOT NULL,
+  `fecha_de_nacimiento` date NOT NULL,
+  `update_at` DATE,
+  PRIMARY KEY (`id`),
+);
+
+CREATE TABLE `productos` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `modelo` varchar(200) NOT NULL,
+  `descripcion` text DEFAULT NULL,
+  `imagen_url` varchar(200) NOT NULL,
+  `update_at` date DEFAULT NULL,
+  `user_id` int unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (user_id) REFERENCES usuarios(id)
+);
+
+CREATE TABLE `comentarios` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `texto` varchar(3000) NOT NULL,
+  `producto_id` int unsigned NOT NULL,
+  `user_id` int unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+FOREIGN KEY (`producto_id`) REFERENCES productos(`id`),
+FOREIGN KEY (`user_id`) REFERENCES usuarios(`id`)
+);
