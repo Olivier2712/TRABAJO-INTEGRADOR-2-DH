@@ -9,7 +9,7 @@ CREATE TABLE `usuarios` (
   `contrasenia` varchar(200) NOT NULL,
   `fecha_de_nacimiento` date NOT NULL,
   `update_at` DATE,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `productos` (
