@@ -1,5 +1,6 @@
 const productos = require("../data/productos")
 const usuarios =require("../data/usuario") 
+const db = require('../database/models');
 
 const userController = {
     
