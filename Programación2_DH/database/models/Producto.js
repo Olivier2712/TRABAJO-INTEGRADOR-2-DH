@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
         descripcion: {
             type: dataTypes.STRING,
         },
-        imagenUrl: {
+        imagen_url: {
             type: dataTypes.STRING,
         }
     }
@@ -22,9 +22,7 @@ module.exports = (sequelize, dataTypes) => {
     let configTabla = {
         tablename: "productos",
         timestamps: true,
-        underscorded: false,
-        createdAt: false,
-        updatedAt: false,
+        underscorded: true,
     }
 
     let Producto = sequelize.define(alias, columnas, configTabla)

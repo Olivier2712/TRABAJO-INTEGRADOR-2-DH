@@ -16,9 +16,7 @@ module.exports = (sequelize, dataTypes) => {
     let configTabla = {
         tablename: "comentarios",
         timestamps: true,
-        underscorded: false,
-        createdAt: false,
-        updatedAt: false,
+        underscorded: true,
     }
 
     let Comentario = sequelize.define(alias, columnas, configTabla)

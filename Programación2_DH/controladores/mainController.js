@@ -3,10 +3,9 @@ const db = require('../database/models');
 
 const mainController = {
   index: function(req, res, next) {
-    res.render('index', {
-      producto: productos,
-      logueado: false
-    })
+db.Usuario.findAll()
+.then(function(data){res.send(data)})
+.catch(function(data){res.send(data)})
   },}
 
   

@@ -1,38 +1,35 @@
-CREATE SCHEMA proeyctointeg;
+CREATE DATABASE IF NOT EXISTS `proyectointeg`;
 
-USE proeyctointeg;
+USE proyectointeg;
 
 CREATE TABLE `usuarios` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `nombre_de_usuario` varchar(200) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `contrasenia` varchar(200) NOT NULL,
-  `fecha_de_nacimiento` date NOT NULL,
-  `update_at` DATE,
-  PRIMARY KEY (`id`)
+  `id` INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `nombre_de_usuario` VARCHAR(200) NOT NULL,
+  `email` VARCHAR(200) NOT NULL,
+  `contrasenia` VARCHAR(200) NOT NULL,
+  `fecha_de_nacimiento` DATE NOT NULL,
+  `updatedAt` DATETIME,
+  `createdAt` DATETIME
 );
 
 CREATE TABLE `productos` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `modelo` varchar(200) NOT NULL,
-  `descripcion` text DEFAULT NULL,
-  `imagen_url` varchar(200) NOT NULL,
-  `update_at` date DEFAULT NULL,
-  `user_id` int unsigned NOT NULL,
-  PRIMARY KEY (`id`),
+  `id` INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `modelo` VARCHAR(200) NOT NULL,
+  `descripcion` VARCHAR(200) NULL,
+  `imagen_url` VARCHAR(200) NOT NULL,
+  `updatedAt` DATETIME,
+  `createdAt` DATETIME,
+  `user_id` INT UNSIGNED NOT NULL,
   FOREIGN KEY (user_id) REFERENCES usuarios(id)
 );
 
 CREATE TABLE `comentarios` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `texto` varchar(3000) NOT NULL,
-  `producto_id` int unsigned NOT NULL,
-  `user_id` int unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-FOREIGN KEY (`producto_id`) REFERENCES productos(`id`),
-FOREIGN KEY (`user_id`) REFERENCES usuarios(`id`)
+  `id` INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `texto` VARCHAR(200) NOT NULL,
+  `updatedAt` DATETIME,
+  `createdAt` DATETIME,
+  `user_id` INT UNSIGNED NOT NULL,
+  FOREIGN KEY (`user_id`) REFERENCES usuarios(`id`),
+  `producto_id` INT UNSIGNED NOT NULL,
+  FOREIGN KEY (`producto_id`) REFERENCES productos(`id`)
 );
-
-
-ALTER TABLE `usuarios` ADD `create_at` DATE NULL DEFAULT NULL ;
-RENAME TABLE `usuarios` TO `Usuarios`;

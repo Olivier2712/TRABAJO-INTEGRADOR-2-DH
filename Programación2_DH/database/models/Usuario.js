@@ -19,21 +19,13 @@ module.exports = (sequelize,dataTypes) => {
         },
         fecha_de_nacimiento: {
             type: dataTypes.DATE,
-        },
-        update_at: {
-                type: dataTypes.DATE,
-        },
-        create_at: {
-            type: dataTypes.DATE,
-        },
+        }
     }
 
     let configTabla = {
         tablename: "usuarios",
         timestamps: true,
-        underscorded: false,
-        createdAt: false,
-        updatedAt: false,
+        underscorded: true,
     }
 
     let Usuario = sequelize.define(alias,columnas,configTabla)
