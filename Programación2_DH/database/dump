@@ -32,3 +32,7 @@ CREATE TABLE `comentarios` (
 FOREIGN KEY (`producto_id`) REFERENCES productos(`id`),
 FOREIGN KEY (`user_id`) REFERENCES usuarios(`id`)
 );
+
+
+ALTER TABLE `usuarios` ADD `create_at` DATE NULL DEFAULT NULL ;
+RENAME TABLE `usuarios` TO `Usuarios`;
