@@ -28,14 +28,15 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form action="" method="get">
-				<input class="form-input" type="email" name="email" placeholder="Email">
-				<input class="form-input" type="text" name="Nombre de usuario" placeholder="Nombre de usuario">
-				<input class="form-input" type="password" name="contraseña" placeholder="Contraseña">
-				<label class="form-label"> <input class="form-input" type="date" name="Fecha de nacimiento"> Fecha de Nacimiento</label>
-				<input class="form-input" type="number" name="Documento" placeholder="Número de documento">
-				<label class="form-label"> <input class="form-input" type="image" name="Foto de perfil" placeholder="Foto de perfil"> Foto de perfil </label>
-				<label class="form-label"> <input class="form-input" type="button" > Enviar </label>
+			<form action="/users/register" method="post">
+				<label for="email" class="form-label">Email<input class="form-input" type="email" name="email" placeholder="email@example.com"></label>
+				<label for="email" class="form-label">Nombre<input class="form-input" type="text" name="nombre" placeholder="Jhonatan"></label>
+				<label for="email" class="form-label">Contraseña<input class="form-input" type="password" name="password"></label>
+				<label class="form-label">Fecha de Nacimiento <input class="form-input" type="date" name="fechaNacimiento"> </label>
+				<input class="form-input" type="number" name="documento" placeholder="Número de documento">
+				<label class="form-label">Foto de perfil <input class="form-input" type="file" name="foto_perfil">  </label>
+				
+				<label class="form-label"><input class="form-input" type="submit" value="Enviar"></label>
 			</form>
 
 
