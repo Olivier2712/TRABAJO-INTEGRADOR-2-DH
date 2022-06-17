@@ -22,7 +22,9 @@ module.exports = (sequelize, dataTypes) => {
     let configTabla = {
         tablename: "productos",
         timestamps: true,
-        underscorded: false
+        underscorded: false,
+        createdAt: false,
+        updatedAt: false,
     }
 
     let Producto = sequelize.define(alias, columnas, configTabla)

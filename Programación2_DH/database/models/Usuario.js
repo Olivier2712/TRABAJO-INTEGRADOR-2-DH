@@ -8,7 +8,7 @@ module.exports = (sequelize,dataTypes) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        nombreDeUsuario: {
+        nombre_de_usuario: {
             type: dataTypes.STRING,
         },
         email: {
@@ -17,15 +17,23 @@ module.exports = (sequelize,dataTypes) => {
         contrasenia: {
             type: dataTypes.STRING,
         },
-        fechaDeNacimiento: {
+        fecha_de_nacimiento: {
             type: dataTypes.DATE,
-        }
+        },
+        update_at: {
+                type: dataTypes.DATE,
+        },
+        create_at: {
+            type: dataTypes.DATE,
+        },
     }
 
     let configTabla = {
         tablename: "usuarios",
         timestamps: true,
-        underscorded: false
+        underscorded: false,
+        createdAt: false,
+        updatedAt: false,
     }
 
     let Usuario = sequelize.define(alias,columnas,configTabla)
