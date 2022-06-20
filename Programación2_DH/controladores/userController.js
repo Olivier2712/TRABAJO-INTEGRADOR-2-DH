@@ -28,6 +28,21 @@ const userController = {
         res.render('login')
     },
 
+    procesarLogin: async function(req,res) {
+            const email = req.body.email;
+            const password = req.body.password;
+            const usuario = await db.Usuario.findOne({where:{email: email}});
+           
+            if (usuario) {
+                if (bcrypt.compareSync(password, usuario.contrasenia)) {
+                    const usuarioAuth = {id: usuario.id, email: usuario.email, nombre: usuario.nombre_de_usuario}
+                } else {
+                    res.send("Credenciales no validas")
+                }
+            }
+   
+    },
+    
     profile: function(req,res) {
         res.render(
             'profile',
