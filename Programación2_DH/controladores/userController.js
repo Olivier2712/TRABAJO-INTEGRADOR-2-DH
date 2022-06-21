@@ -9,7 +9,7 @@ const userController = {
         res.render('register')
     },
 
-    almacenarRegistro: async function(req,res) {
+    almacenarRegistro:  function(req,res) {
 
         const nuevoUsuario = {
             nombre_de_usuario: req.body.nombre,
@@ -20,14 +20,20 @@ const userController = {
             create_at: new Date()
         }
            
-        buscarEmail = await db.Usuario.findOne({where:[{email: req.body.email}]});
+         db.Usuario.findOne({where:[{email: req.body.email}]}) 
+         .then(function(buscarEmail){
+                
+                if (buscarEmail == null) {
+                     db.Usuario.create(nuevoUsuario);
+                    res.redirect('/users/login');    
+                 } else  {
+                     res.send("El email ingresado ya ha sido registrado, porfavor intenta con un nuevo email o ingresa a tu cuenta con el ingresado.")
+                }
 
-        if (buscarEmail == null) {
-            await db.Usuario.create(nuevoUsuario);
-            res.redirect('/users/login');    
-        } else  {
-            res.send("El email ingresado ya ha sido registrado, porfavor intenta con un nuevo email o ingresa a tu cuenta con el ingresado.")
-        }
+            })
+            .catch(function (error){
+                res.send("Ha ocurrido un error de conexión.")
+            });
        
     },
 
@@ -35,24 +41,38 @@ const userController = {
         res.render('login')
     },
 
-    procesarLogin: async function(req,res) {
+    procesarLogin:  function(req,res) {
             const email = req.body.email;
             const password = req.body.password;
-            const usuario = await db.Usuario.findOne({where:{email: email}});
-           
-            if (usuario) {
-                if (bcrypt.compareSync(password, usuario.contrasenia)) {
-                    const usuarioAuth = {id: usuario.id, email: usuario.email, nombre: usuario.nombre_de_usuario}
-                    req.session.cookie.maxAge 
-                    req.session.auth = usuarioAuth;
-                    res.redirect('/');
-                } else {
-                    res.send("La contraseña ingreada es incorrecta.") 
-                }
-            }
-   
+            const recordame = req.body.recordame;
+            
+                db.Usuario.findOne({where:{email: email}})
+                    .then(function (usuario){   
+                            if (usuario) {
+                                if (bcrypt.compareSync(password, usuario.contrasenia)) {
+                                    const usuarioAuth = {id: usuario.id, email: usuario.email, nombre: usuario.nombre_de_usuario}
+                                    req.session.cookie.maxAge 
+                                    req.session.auth = usuarioAuth;
+
+                                     if (recordame) {
+                                        res.cookie("cookieAuth", usuarioAuth,{maxAge: 1000 * 60 * 5} );
+                                    }
+                                    res.redirect('/');
+                                } else {
+                                    res.send("La contraseña ingreada es incorrecta.") 
+                                }
+                            }
+                    })
+                    .catch(function (error){
+                        console.log(error)
+                        res.send("Ha ocurrido un error de conexión.")
+                    });
+                
+
     },
     
+
+
     profile: function(req,res) {
         res.render(
             'profile',
@@ -67,6 +87,12 @@ const userController = {
         )
     },
 
+
+    logout: function(req, res) {
+        req.session.destroy()
+        res.clearCookie("cookieAuth")
+        res.redirect('/')
+    }
 
 }
 

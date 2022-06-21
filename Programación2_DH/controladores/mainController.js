@@ -6,6 +6,8 @@ const mainController = {
       let auth = null;
     if (req.session.auth) {
         auth= req.session.auth;
+ } else if (req.cookies.cookieAuth){
+        auth = req.cookies.cookieAuth  
  }
     res.render('index', {
       producto: productos,
