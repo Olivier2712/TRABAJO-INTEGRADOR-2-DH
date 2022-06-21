@@ -19,9 +19,16 @@ const userController = {
             update_at: new Date(),
             create_at: new Date()
         }
+           
+        buscarEmail = await db.Usuario.findOne({where:[{email: req.body.email}]});
 
-        await db.Usuario.create(nuevoUsuario);
-        res.redirect('/users/login');
+        if (buscarEmail == null) {
+            await db.Usuario.create(nuevoUsuario);
+            res.redirect('/users/login');    
+        } else  {
+            res.send("El email ingresado ya ha sido registrado, porfavor intenta con un nuevo email o ingresa a tu cuenta con el ingresado.")
+        }
+       
     },
 
     login: function(req,res) {
