@@ -47,7 +47,7 @@ const userController = {
                     req.session.auth = usuarioAuth;
                     res.redirect('/');
                 } else {
-                    res.send("Credenciales no validas")
+                    res.send("La contraseña ingreada es incorrecta.") 
                 }
             }
    
