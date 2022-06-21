@@ -16,7 +16,7 @@
 </head>
 <body>
     <!-- Header -->
-    <% if(logueado) { %>
+    <% if(auth) { %>
         <%- include('../views/partials/headerLogueado.ejs') %>
     <% } else { %>
         <%- include('../views/partials/header.ejs') %>

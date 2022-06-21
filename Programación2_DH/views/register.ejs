@@ -29,11 +29,11 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<form action="/users/register" method="post">
-				<label for="email" class="form-label">Email<input class="form-input" type="email" name="email" placeholder="email@example.com"></label>
-				<label for="email" class="form-label">Nombre<input class="form-input" type="text" name="nombre" placeholder="Jhonatan"></label>
-				<label for="email" class="form-label">Contraseña<input class="form-input" type="password" name="password"></label>
-				<label class="form-label">Fecha de Nacimiento <input class="form-input" type="date" name="fechaNacimiento"> </label>
-				<input class="form-input" type="number" name="documento" placeholder="Número de documento">
+				<label for="email" class="form-label">Email<input class="form-input" type="email" name="email" placeholder="email@example.com" required ></label>
+				<label for="email" class="form-label">Nombre<input class="form-input" type="text" name="nombre" placeholder="Jhonatan" required></label>
+				<label for="email" class="form-label">Contraseña<input class="form-input" type="password" name="password" minlength= 3 required></label>
+				<label class="form-label">Fecha de Nacimiento <input class="form-input" type="date" name="fechaNacimiento" required> </label>
+				<input class="form-input" type="number" name="documento" placeholder="Número de documento" required>
 				<label class="form-label">Foto de perfil <input class="form-input" type="file" name="foto_perfil">  </label>
 				
 				<label class="form-label"><input class="form-input" type="submit" value="Enviar"></label>

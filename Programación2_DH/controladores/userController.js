@@ -36,6 +36,9 @@ const userController = {
             if (usuario) {
                 if (bcrypt.compareSync(password, usuario.contrasenia)) {
                     const usuarioAuth = {id: usuario.id, email: usuario.email, nombre: usuario.nombre_de_usuario}
+                    req.session.cookie.maxAge 
+                    req.session.auth = usuarioAuth;
+                    res.redirect('/');
                 } else {
                     res.send("Credenciales no validas")
                 }

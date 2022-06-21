@@ -18,9 +18,13 @@
 
 <body>
 	
-	<!-- /Header -->
-	<%- include('../views/partials/header.ejs')%>
-	<!-- /Header -->
+	<!-- Header -->
+    <% if(auth) { %>
+        <%- include('../views/partials/headerLogueado.ejs') %>
+    <% } else { %>
+        <%- include('../views/partials/header.ejs') %>
+    <% } %>
+    <!-- /Header -->
 
 
 	<!-- Novedades -->
