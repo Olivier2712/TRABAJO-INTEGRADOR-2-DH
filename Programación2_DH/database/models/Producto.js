@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
     Producto.associate = (models) => {
         Producto.belongsTo(models.Usuario, {
             as: "usuario_producto",
-            foreignKey: "usuario_id"
+            foreignKey: "user_id" // usuario_id == user_id
         })
 
         Producto.hasMany(models.Comentario, {
