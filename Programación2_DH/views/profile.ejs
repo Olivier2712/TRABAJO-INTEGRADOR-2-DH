@@ -1,55 +1,55 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
-   
-    <title> Mercado Liebre Argentina</title>
-            <!-- Font Awesome Stylesheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <!-- Bootstrap Grid Stylesheet -->
-    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-    <!-- Own Stylesheet -->
-    <link rel="stylesheet" href="/css/app.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
+
+<title> Mercado Liebre Argentina</title>
+        <!-- Font Awesome Stylesheet -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<!-- Bootstrap Grid Stylesheet -->
+<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+<!-- Own Stylesheet -->
+<link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <!-- Header -->
-    <% if(auth) { %>
-        <%- include('../views/partials/headerLogueado.ejs') %>
-    <% } else { %>
-        <%- include('../views/partials/header.ejs') %>
-    <% } %>
-    <!-- /Header -->
- 
-    <!-- Datos del usuario -->
-    <section class="info-usuario container products-wrapper">
-        <div class="row">
-            <div class="img-container offset-3 col-2">
-                <img src="/images/users/<%= usuario[0].fotoDePerfil %>" alt="foto de perfil" class="foto-perfil">
+<!-- Header -->
+<% if(auth) { %>
+    <%- include('../views/partials/headerLogueado.ejs') %>
+<% } else { %>
+    <%- include('../views/partials/header.ejs') %>
+<% } %>
+<!-- /Header -->
+
+<!-- Datos del usuario -->
+<section class="info-usuario container products-wrapper">
+    <div class="row">
+        <div class="img-container offset-3 col-2">
+            <!-- ACÁ Estaba la foto de perfil -->
+        </div>
+        <div class="data-container col-6">
+            <div class="d-flex align-items-center ">
+                <h1 class="main-title"><%= usuario.nombre_de_usuario %>
+                    <a href="/users/editar-perfil">
+                        <i class="fas fa-cog"></i>
+                    </a>
+                </h1>
+                <a class="btn mt-3 ml-4" href="">SEGUIR</a>
             </div>
-            <div class="data-container col-6">
-                <div class="d-flex align-items-center ">
-                    <h1 class="main-title"><%= usuario[0].nombre %>
-                        <a href="/users/editar-perfil">
-                            <i class="fas fa-cog"></i>
-                        </a>
-                    </h1>
-                    <a class="btn mt-3 ml-4" href="">SEGUIR</a>
-                </div>
-                <div>
-                    <ul class="">
-                        <li><%= usuario[0].email %></li>
-                        <li>8 productos</li>
-                        <li>200 seguidores</li>
-                        <li>300 comentarios</li>
-                    </ul>
-                </div>
+            <div>
+                <ul class="">
+                    <li><%= usuario.email %></li>
+                    <li>Cantidad de productos: <%= cantidad_productos %></li>
+                    <!-- <li>200 seguidores</li> -->
+                    <li>Cantidad de comentarios: <%= cantidad_comentarios%></li>
+                </ul>
             </div>
         </div>
-    </section>
-    <!-- /Datos del usuario -->
+    </div>
+</section>
+<!-- /Datos del usuario -->
  
     <!-- Mis productos -->
     <div class="container products-wrapper">

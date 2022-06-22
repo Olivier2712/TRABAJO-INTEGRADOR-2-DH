@@ -37,6 +37,11 @@ const userController = {
        
     },
 
+
+
+
+    //LOGIN
+
     login: function(req,res) {
         res.render('login')
     },
@@ -74,10 +79,31 @@ const userController = {
 
 
     profile: function(req,res) {
-        res.render(
-            'profile',
-            { producto: productos, usuario: usuarios, logueado: true}
-        )
+
+        if (req.session.auth === undefined) {
+            db.Usuario.findOne({
+                include: [
+                    {association: "producto_usuario"},
+                    {association: "comentario_usuario"}
+                ],
+                where: [
+                    {"id": 1}
+                    // {"id": auth.id} //  está comentado porque no nos podemos loguear aun 
+                ]
+            })
+                .then(function(usuario) {
+                    res.render(
+                         'profile',
+                         { cantidad_comentarios: usuario.comentario_usuario.length, cantidad_productos: usuario.producto_usuario.length ,productos: usuario.producto_usuario /* array */, usuario: usuario /* objeto */, logueado: true}
+                     )
+                    res.send(usuario)
+                })
+                .catch(function (error) {console.log(error)})
+    
+        } else {
+            res.redirect("/login")
+        }
+    
     },
     
     editProfile: function(req,res) {
