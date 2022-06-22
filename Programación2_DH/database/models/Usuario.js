@@ -33,12 +33,12 @@ module.exports = (sequelize,dataTypes) => {
     Usuario.associate = (models) => {
         Usuario.hasMany(models.Producto, {
             as: "producto_usuario",
-            foreignKey: "usuario_id"
+            foreignKey: "user_id" // usuario_id == user_id
         })
 
         Usuario.hasMany(models.Comentario, {
             as: "comentario_usuario",
-            foreignKey: "usuario_id"
+            foreignKey: "user_id" // usuario_id == user_id
         })
     }
 
