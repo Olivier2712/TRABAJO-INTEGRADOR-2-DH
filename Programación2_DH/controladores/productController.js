@@ -2,6 +2,7 @@
 // const usuarios = require("../data/usuario");
 const db = require('../database/models');
 let {Op} = require('sequelize');
+const Usuario = require('../database/models/Usuario');
 
 const productController = {
     index: function(req,res){res.render('product',{productos: productos, usuario: usuarios, logueado: true})},
@@ -19,14 +20,14 @@ const productController = {
             ],
             where: {
                 [Op.or]:[
-                    {"descripcion": {[Op.like]: `%${producto_buscado}%`}},
-                    {"modelo": {[Op.like]: `%${producto_buscado}%`}}
+                    {descripcion: {[Op.like]: `%${producto_buscado}%`}},
+                    {modelo: {[Op.like]: `%${producto_buscado}%`}}
             ]}
         })
         .then(function(productos) {
             const auth = req.session.auth;
             if (productos && productos.length > 0) {
-               
+               console.log(productos[0].Usuario)
                 res.render('search-results', {
                     productos: productos,
                     cantidad_comentarios: productos.comentario_producto,
