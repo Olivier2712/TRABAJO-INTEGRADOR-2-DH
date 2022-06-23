@@ -3,13 +3,7 @@
 <!-- Include Head -->
 <head>
 
-	<!-- Header -->
-    <% if(auth) { %>
-        <%- include('../views/partials/headerLogueado.ejs') %>
-    <% } else { %>
-        <%- include('../views/partials/header.ejs') %>
-    <% } %>
-    <!-- /Header -->
+	
 
 
 	<meta charset="UTF-8">
@@ -25,7 +19,13 @@
 	<link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-	
+	<!-- Header -->
+    <% if(auth) { %>
+        <%- include('../views/partials/headerLogueado.ejs') %>
+    <% } else { %>
+        <%- include('../views/partials/header.ejs') %>
+    <% } %>
+    <!-- /Header -->
 	<!-- Banner -->
 	<div class="banner">
 		<img src="images/banner_dos.jpg" alt="Banner de ofertas">
@@ -54,7 +54,7 @@
 			<% for(let producto of productos) {%>
                 <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
-                    <a href="/productos/productos/">
+                    <a href="/productos/detalle/<%= producto.id %>">
                         <figure class="product-box_image">
                             <img src="<%= './images/products/'+ producto.imagen_url %>" alt="">
                         </figure>

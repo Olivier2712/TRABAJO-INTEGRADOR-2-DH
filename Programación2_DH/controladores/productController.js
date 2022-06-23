@@ -1,10 +1,10 @@
 // const productos = require("../data/productos");
 // const usuarios = require("../data/usuario");
 const db = require('../database/models');
-let op = db.Sequelize.Op
+let {Op} = require('sequelize');
 
 const productController = {
-    index: function(req,res){res.render('product',{producto: productos, usuario: usuarios, logueado: true})},
+    index: function(req,res){res.render('product',{productos: productos, usuario: usuarios, logueado: true})},
     add: function(req,res){res.render('product-add', {usuario: usuarios, logueado: true})},
     resultadosBusqueda: function(req,res){res.render('search-results', {producto: productos})},
 
@@ -17,20 +17,23 @@ const productController = {
                 { association: "comentario_producto", include: "usuario_comentario" },
                 {association: "usuario_producto"}
             ],
-            where: [
-                {"modelo": {[op.like]: `%${producto_buscado}%`}},
-                {"descripcion": {[op.like]: `%${producto_buscado}%`}}
-            ]
+            where: {
+                [Op.or]:[
+                    {"descripcion": {[Op.like]: `%${producto_buscado}%`}},
+                    {"modelo": {[Op.like]: `%${producto_buscado}%`}}
+            ]}
         })
         .then(function(productos) {
-            
-            if (productos.length > 0) {
+            const auth = req.session.auth;
+            if (productos && productos.length > 0) {
+               
                 res.render('search-results', {
-                    producto: productos,
-                    cantidad_comentarios: productos.comentario_producto.length
+                    productos: productos,
+                    cantidad_comentarios: productos.comentario_producto,
+                    auth
                 })
             } else {
-                res.send("No hay productos")
+                res.render('search-results-not-found',{auth})
             }
         })
         .catch(function(error) {
@@ -39,6 +42,22 @@ const productController = {
 
     },
 
+    detalle:  function(req,res) {
+        const id= req.params.id;
+        const auth = req.session.auth;
+        
+        const producto = db.Producto.findByPk(id)
+       .then(function (producto) {
+        if (producto) {
+            console.log(producto);
+            res.render('product', {producto, auth});
+        } else { 
+            res.render('search-results-not-found',{auth})
+        }
+       })
+       .catch(function(error){
+        res.send(error);
+       })},
     //AGREGAR PRODUCTO
 
     productos: function(req,res) {

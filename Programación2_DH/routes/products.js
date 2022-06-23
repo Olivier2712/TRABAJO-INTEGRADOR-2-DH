@@ -6,5 +6,6 @@ var productController = require("../controladores/productController.js")
 router.get('/productos', productController.index);
 router.get('/add', productController.add);
 router.get('/resultados-de-busqueda', productController.resultadosBusqueda);
+router.get('/detalle/:id', productController.detalle);
 
 module.exports = router;
