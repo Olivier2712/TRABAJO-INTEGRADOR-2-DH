@@ -34,8 +34,7 @@ CREATE TABLE `comentarios` (
   FOREIGN KEY (`producto_id`) REFERENCES productos(`id`)
 );
 
-INSERT INTO `usuarios` VALUES (1,"nombre","nombre_de_usuario","fotoPerfil.jpg");
-INSERT INTO `productos` VALUES (1,"Jordan","Blancas","jordan.jpg","2022-06-03","2022-06-03",3);
-INSERT INTO `comentarios` VALUES (1,"Jordan","2022-06-03","2022-06-03", 3,1);
-SELECT * FROM `usuarios`;
-SELECT * FROM productos;
+INSERT INTO `usuarios` VALUES (1,"Usuario_Ingresado_automaticamente","usuario1@gmail.com", "123", "2001-12-25","2022-06-03","2022-06-03");
+INSERT INTO `productos` VALUES (1,"Jordan","Zapatillas Jordan de color blancas","jordan.jpg","2022-06-03","2022-06-03",1);
+INSERT INTO `comentarios` VALUES (1,"Estas Jordan estan zarpadas","2022-06-03","2022-06-03", 1,1);
+UPDATE `proyectointeg`.`usuarios` SET `nombre_de_usuario` = 'Usuario_Ingresado_desde_SQL' WHERE (`id` = '1');
