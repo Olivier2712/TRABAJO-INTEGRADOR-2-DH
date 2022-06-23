@@ -34,6 +34,8 @@ CREATE TABLE `comentarios` (
   FOREIGN KEY (`producto_id`) REFERENCES productos(`id`)
 );
 
-INSERT INTO `usuarios` VALUES (1,"nombre","nombre_de_usuario","fotoPerfil.jpg")
-INSERT INTO `productos` VALUES (1,"Jordan","Blancas","jordan.jpg",1)
-INSERT INTO `comentarios` VALUES (1,"Jordan","Blancas","jordan.jpg",1,1)
+INSERT INTO `usuarios` VALUES (1,"nombre","nombre_de_usuario","fotoPerfil.jpg");
+INSERT INTO `productos` VALUES (1,"Jordan","Blancas","jordan.jpg","2022-06-03","2022-06-03",3);
+INSERT INTO `comentarios` VALUES (1,"Jordan","2022-06-03","2022-06-03", 3,1);
+SELECT * FROM `usuarios`;
+SELECT * FROM productos;
