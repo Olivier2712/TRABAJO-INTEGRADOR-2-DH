@@ -70,3 +70,23 @@ INSERT INTO `comentarios` VALUES (7,"Me gustarian mas con otros colores, son dif
 INSERT INTO `comentarios` VALUES (8,"Se demoraron con el envio pero cumplieron mis expectativas","2022-06-03","2022-06-03", 8,8);
 INSERT INTO `comentarios` VALUES (9,"EZapatillas muy buenas para el dia a dia!","2022-06-03","2022-06-03", 9,9);
 INSERT INTO `comentarios` VALUES (10,"Las habia pedido en color rosa y me mandaron en rojo! No responden los mensajes.","2022-06-03","2022-06-03", 10,10);
+
+UPDATE `proyectointeg`.`productos` SET `descripcion` = 'Zapatillas Jordan de color rojo' WHERE (`id` = '1');
+UPDATE `proyectointeg`.`productos` SET `descripcion` = 'Una cruza de marzas que combina lo mejor de dos mundos' WHERE (`id` = '2');
+UPDATE `proyectointeg`.`productos` SET `descripcion` = 'La mejor textura fabril del mundo' WHERE (`id` = '3');
+UPDATE `proyectointeg`.`productos` SET `descripcion` = 'Just do it' WHERE (`id` = '4');
+UPDATE `proyectointeg`.`productos` SET `descripcion` = 'Colo negro y para todo el mundo' WHERE (`id` = '5');
+UPDATE `proyectointeg`.`productos` SET `descripcion` = 'Seran retro pero estan a la moda' WHERE (`id` = '6');
+UPDATE `proyectointeg`.`productos` SET `descripcion` = 'Si vas a ver TopGun, usa estas zapas' WHERE (`id` = '7');
+UPDATE `proyectointeg`.`productos` SET `descripcion` = 'De color volcanico' WHERE (`id` = '8');
+UPDATE `proyectointeg`.`productos` SET `descripcion` = 'Gran combinación de marcas' WHERE (`id` = '9');
+UPDATE `proyectointeg`.`productos` SET `descripcion` = 'Las mejores zapas del mundos' WHERE (`id` = '10');
+
+UPDATE `proyectointeg`.`productos` SET `createdAt` = '2022-06-04 00:00:00' WHERE (`id` = '2');
+UPDATE `proyectointeg`.`productos` SET `createdAt` = '2022-06-05 00:00:00' WHERE (`id` = '3');
+UPDATE `proyectointeg`.`productos` SET `createdAt` = '2022-06-06 00:00:00' WHERE (`id` = '4');
+UPDATE `proyectointeg`.`productos` SET `createdAt` = '2022-06-07 00:00:00' WHERE (`id` = '5');
+UPDATE `proyectointeg`.`productos` SET `createdAt` = '2022-06-08 00:00:00' WHERE (`id` = '6');
+UPDATE `proyectointeg`.`productos` SET `createdAt` = '2022-06-09 00:00:00' WHERE (`id` = '7');
+UPDATE `proyectointeg`.`productos` SET `createdAt` = '2022-06-10 00:00:00' WHERE (`id` = '8');
+UPDATE `proyectointeg`.`productos` SET `createdAt` = '2022-06-11 00:00:00' WHERE (`id` = '9');
