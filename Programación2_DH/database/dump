@@ -38,3 +38,35 @@ INSERT INTO `usuarios` VALUES (1,"Usuario_Ingresado_automaticamente","usuario1@g
 INSERT INTO `productos` VALUES (1,"Jordan","Zapatillas Jordan de color blancas","jordan.jpg","2022-06-03","2022-06-03",1);
 INSERT INTO `comentarios` VALUES (1,"Estas Jordan estan zarpadas","2022-06-03","2022-06-03", 1,1);
 UPDATE `proyectointeg`.`usuarios` SET `nombre_de_usuario` = 'Usuario_Ingresado_desde_SQL' WHERE (`id` = '1');
+
+/* CARGO LOS PRODUCTOS DE MANERA MANUAL PORQUE SI LOS CARGO DESDE LA PÁGINA WEB, A LOS DEMAS NO LES APARECERA YA QUE ES UNA BASE LOCAL */
+
+INSERT INTO `usuarios` VALUES (2,"Gianfranco","gian@gmail.com", "123", "2001-12-25","2022-06-03","2022-06-03");
+INSERT INTO `usuarios` VALUES (3,"Bautista","bau@gmail.com", "123", "2001-12-25","2022-06-03","2022-06-03");
+INSERT INTO `usuarios` VALUES (4,"Olivier","oli@gmail.com", "123", "2001-12-25","2022-06-03","2022-06-03");
+INSERT INTO `usuarios` VALUES (5,"Matias","mati@gmail.com", "123", "2001-12-25","2022-06-03","2022-06-03");
+INSERT INTO `usuarios` VALUES (6,"Baltazar","balti@gmail.com", "123", "2001-12-25","2022-06-03","2022-06-03");
+INSERT INTO `usuarios` VALUES (7,"Micaela","mica@gmail.com", "123", "2001-12-25","2022-06-03","2022-06-03");
+INSERT INTO `usuarios` VALUES (8,"Nicole","nicole@gmail.com", "123", "2001-12-25","2022-06-03","2022-06-03");
+INSERT INTO `usuarios` VALUES (9,"Maria Jose","mary@gmail.com", "123", "2001-12-25","2022-06-03","2022-06-03");
+INSERT INTO `usuarios` VALUES (10,"Maite","maite@gmail.com", "123", "2001-12-25","2022-06-03","2022-06-03");
+
+INSERT INTO `productos` VALUES (2,"Jordan x Off-White","Zapatillas Jordan de color blancas","jordan.jpg","2022-06-03","2022-06-03",2);
+INSERT INTO `productos` VALUES (3,"Yeezy 700","Zapatillas Jordan de color blancas","jordan.jpg","2022-06-03","2022-06-03",3);
+INSERT INTO `productos` VALUES (4,"Nike blazers","Zapatillas Jordan de color blancas","jordan.jpg","2022-06-03","2022-06-03",4);
+INSERT INTO `productos` VALUES (5,"Human Race black","Zapatillas Jordan de color blancas","jordan.jpg","2022-06-03","2022-06-03",5);
+INSERT INTO `productos` VALUES (6,"Jordan Retro","Zapatillas Jordan de color blancas","jordan.jpg","2022-06-03","2022-06-03",6);
+INSERT INTO `productos` VALUES (7,"AirForce 1","Zapatillas Jordan de color blancas","jordan.jpg","2022-06-03","2022-06-03",7);
+INSERT INTO `productos` VALUES (8,"Off-White vulcano","Zapatillas Jordan de color blancas","jordan.jpg","2022-06-03","2022-06-03",8);
+INSERT INTO `productos` VALUES (9,"Nike air force max 1","Zapatillas Jordan de color blancas","jordan.jpg","2022-06-03","2022-06-03",9);
+INSERT INTO `productos` VALUES (10,"Air Jordan 4 retro","Zapatillas Jordan de color blancas","jordan.jpg","2022-06-03","2022-06-03",10);
+
+INSERT INTO `comentarios` VALUES (2,"Muy buenas zapatillas","2022-06-03","2022-06-03", 2,2);
+INSERT INTO `comentarios` VALUES (3,"La calidad no era lo que esperaba","2022-06-03","2022-06-03", 3,3);
+INSERT INTO `comentarios` VALUES (4,"Me encantannnn!","2022-06-03","2022-06-03", 4,4);
+INSERT INTO `comentarios` VALUES (5,"Muy facheras pero me hicieron doler los pies","2022-06-03","2022-06-03", 5,5);
+INSERT INTO `comentarios` VALUES (6,"La mejor compra en mucho timpo!","2022-06-03","2022-06-03", 6,6);
+INSERT INTO `comentarios` VALUES (7,"Me gustarian mas con otros colores, son dificiles de convinar","2022-06-03","2022-06-03", 7,7);
+INSERT INTO `comentarios` VALUES (8,"Se demoraron con el envio pero cumplieron mis expectativas","2022-06-03","2022-06-03", 8,8);
+INSERT INTO `comentarios` VALUES (9,"EZapatillas muy buenas para el dia a dia!","2022-06-03","2022-06-03", 9,9);
+INSERT INTO `comentarios` VALUES (10,"Las habia pedido en color rosa y me mandaron en rojo! No responden los mensajes.","2022-06-03","2022-06-03", 10,10);
