@@ -51,21 +51,26 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 
-			<% for(let producto of productos) {%>
+			<% for(let producto in productos) {%>
                 <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
                     <a href="/productos/productos/">
                         <figure class="product-box_image">
-                            <img src="<%= './images/products/'+ producto.imagen_url %>" alt="">
+                            <img src="./images/products/<%= producto.imagen_url %>" alt="">
                         </figure>
                         <article class="product-box_data">
                             <h2><%= producto.modelo %></h2>
                             <p> <%= producto.descripcion %></p>
-                          
+                            <p> <%= producto.usuario_producto.nombre_de_usuario %></p>
                             <p>Comentarios: <%= cantidad_comentarios %></p>
                         </article>
 						<ul>
-							
+							/* <% for(let j = 0; j < cantidad_comentarios; j++) { %>
+								<li>
+									<a href="/perfil/<%= producto.comentario_producto[j].usuario_comentario.id %>"><%= producto[i].comentario_producto[j].usuario_comentario.nombre_de_usuario %></a>
+									<%= producto[i].comentario_producto[j].texto %>
+								</li> */
+							<% } %>
 						</ul>
                     </a>
                 </section>

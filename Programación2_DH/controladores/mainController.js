@@ -18,12 +18,12 @@ const mainController = {
       order: [["createdAt", "DESC"]]
     })
       .then(function (productos) {
-        // res.render('index', {
-        //   productos: productos,
-        //   cantidad_comentarios: productos.comentario_producto,
-        //   auth
-        // })
-        res.send(productos)
+         res.render('index', {
+           productos: productos,
+           cantidad_comentarios: productos.comentario_producto,
+           auth
+         })
+        // res.send(productos)
       })
       .catch(function (error) { console.log(error) })
   },
