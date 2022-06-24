@@ -6,7 +6,7 @@ const Usuario = require('../database/models/Usuario');
 
 const productController = {
     index: function(req,res){res.render('product',{productos: productos, usuario: usuarios, logueado: true})},
-    add: function(req,res){res.render('product-add', {usuario: usuarios, logueado: true})},
+
     resultadosBusqueda: function(req,res){res.render('search-results', {producto: productos})},
 
     resultadosBusqueda: function(req,res) {
@@ -61,11 +61,17 @@ const productController = {
        })},
     //AGREGAR PRODUCTO
 
-    productos: function(req,res) {
-        res.render('product/add')
+    add: function(req,res) {
+        auth = req.session.auth
+        if(auth){
+            res.render('product-add',{auth})
+        }else{
+            res.redirect("/")
+        }
+        
     },
 
-    newProduct:  function(req,res) {
+    store:  function(req,res) {
 
         const nuevoProducto = {
             modelo: req.body.modelo,
@@ -74,22 +80,20 @@ const productController = {
             update_at: new Date(),
             create_at: new Date()
         }
-           
-         db.Producto.findByPk({where:[{email: req.body.email}]}) 
-         .then(function(buscarProducto){
-                
-                if (buscarProducto == null) {
-                     db.Producto.update(nuevoProducto);
-                    res.redirect('/products/productos');    
-                 } else  {
-                     res.send("El producto ya existe.")
+           res.send(req.file.filename)
+        /* db.Producto.findOne ({where:{modelo:nuevoProducto.modelo}}) 
+            .then (function (productoencontrado){
+                if (productoencontrado){
+                    // crear logica de error producto existente 
+                    req.send("producto existente")
+                } else {
+                    db.Producto.create(nuevoProducto) 
+                        .then(function(resultado){
+                            console.log("producto creado")
+                            res.redirect("/")
+                        })
                 }
-
-            })
-            .catch(function (error){
-                res.send("Ha ocurrido un error de conexión.")
-            });
-       
+            })*/
     },
 }
    

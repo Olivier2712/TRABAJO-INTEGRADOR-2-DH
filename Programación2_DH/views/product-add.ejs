@@ -34,14 +34,12 @@
             <!-- Show the "ultimos" products -->
             <h2 class="col-12">
             </h2>
-            <form  action="" method="get">
-                <ul class="FormularioCarga">
-                    <li><input class="form-input" type="file" name="imagenProducto" id="" placeholder="Imagen de producto"></li>
-                    <li><input class="form-input" type="text" name="NombreProducto" id="" placeholder="Nombre del producto"></li>
-                    <li><input class="form-input" type="text" name="DescripcionProducto" id="" placeholder="Descripcion del producto" ></li>
-                    <li><input class="form-input" type="datetime" name="FechaCargaProducto" id="" placeholder="Fecha de carga del producto" ></li>
-                    <li><button class="form-label" type="submit">Agregar Producto</button></li>
-                </ul>
+            <form  action="/productos/store" method="post" enctype="multipart/form-data">
+                <div class="FormularioCarga">
+                    <input class="form-input" type="file" name="imagen_url" id="">
+                    <input class="form-input" type="text" name="modelo" id="" placeholder="Nombre del producto">
+                    <button class="form-label" type="submit">Agregar Producto</button>
+                </div>
                
             </form>
  
