@@ -78,30 +78,15 @@ const userController = {
     
 
 
-    profile: function(req,res) {
+    profile:async function(req,res) {
 
-        if (req.session.auth === undefined) {
-            db.Usuario.findOne({
-                include: [
-                    {association: "producto_usuario"},
-                    {association: "comentario_usuario"}
-                ],
-                where: [
-                    {"id": 1}
-                    // {"id": auth.id} //  está comentado porque no nos podemos loguear aun 
-                ]
-            })
-                .then(function(usuario) {
-                    res.render(
-                         'profile',
-                         { cantidad_comentarios: usuario.comentario_usuario.length, cantidad_productos: usuario.producto_usuario.length ,productos: usuario.producto_usuario /* array */, usuario: usuario /* objeto */, logueado: true}
-                     )
-                    res.send(usuario)
-                })
-                .catch(function (error) {console.log(error)})
-    
+        if (req.session.auth ) {
+            const usuario = await db.Usuario.findByPk(req.session.auth.id)
+            console.log(usuario)
+            const productos = await usuario.getComentarios()
+            console.log(productos.length)
         } else {
-            res.redirect("/login")
+            res.redirect("/users/login")
         }
     
     },

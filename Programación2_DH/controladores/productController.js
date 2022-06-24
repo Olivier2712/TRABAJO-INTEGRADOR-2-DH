@@ -73,6 +73,10 @@ const productController = {
     },
 
     store:  function(req,res) {
+        console.log(req.session.auth)
+        if( !req.session.auth.id){
+            res.redirect("/")
+        }
 
         const nuevoProducto = {
             modelo: req.body.modelo,
