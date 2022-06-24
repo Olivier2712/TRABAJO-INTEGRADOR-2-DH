@@ -77,8 +77,7 @@ const productController = {
         const nuevoProducto = {
             modelo: req.body.modelo,
             descripcion: req.body.descripcion,
-            user_id: req.session.auth,
-            imagen_url: req.file.filename,
+            user_id: 1,//req.session.auth,
             update_at: new Date(),
             create_at: new Date()
         }
