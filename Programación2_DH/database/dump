@@ -90,3 +90,13 @@ UPDATE `proyectointeg`.`productos` SET `createdAt` = '2022-06-08 00:00:00' WHERE
 UPDATE `proyectointeg`.`productos` SET `createdAt` = '2022-06-09 00:00:00' WHERE (`id` = '7');
 UPDATE `proyectointeg`.`productos` SET `createdAt` = '2022-06-10 00:00:00' WHERE (`id` = '8');
 UPDATE `proyectointeg`.`productos` SET `createdAt` = '2022-06-11 00:00:00' WHERE (`id` = '9');
+
+UPDATE `proyectointeg`.`productos` SET `imagen_url` = 'air-jordan-4-retro.jpg' WHERE (`id` = '10');
+UPDATE `proyectointeg`.`productos` SET `imagen_url` = 'nike-air-force-1.jpg' WHERE (`id` = '7');
+UPDATE `proyectointeg`.`productos` SET `imagen_url` = '11546203_xxl_a1.jpg' WHERE (`id` = '8');
+UPDATE `proyectointeg`.`productos` SET `imagen_url` = 'air-force-1.jpg' WHERE (`id` = '9');
+UPDATE `proyectointeg`.`productos` SET `imagen_url` = 'nike-air-jordan-1-mid-white-gym-red.jpg' WHERE (`id` = '6');
+UPDATE `proyectointeg`.`productos` SET `imagen_url` = 'nike-blazer-negro_5f393c37_1280x1829.jpg' WHERE (`id` = '4');
+UPDATE `proyectointeg`.`productos` SET `imagen_url` = 'NMD-Hu-Trail-Pharrell-eg7836-Black_1_1000x1000.jpg' WHERE (`id` = '5');
+UPDATE `proyectointeg`.`productos` SET `imagen_url` = 'yeezy700.jpg' WHERE (`id` = '3');
+UPDATE `proyectointeg`.`productos` SET `imagen_url` = 'OFF-WHITE-RETRO-HIGH-OG-WHITE.jpg' WHERE (`id` = '2');
