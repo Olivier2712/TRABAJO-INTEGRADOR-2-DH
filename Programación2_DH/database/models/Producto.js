@@ -16,6 +16,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         imagen_url: {
             type: dataTypes.STRING,
+        },
+        user_id: {
+            type: dataTypes.INTEGER,
         }
     }
 
@@ -30,7 +33,7 @@ module.exports = (sequelize, dataTypes) => {
     Producto.associate = (models) => {
         Producto.belongsTo(models.Usuario, {
             as: "usuario_producto",
-            foreignKey: "user_id" // usuario_id == user_id
+            foreignKey: "user_id"
         })
 
         Producto.hasMany(models.Comentario, {

@@ -3,6 +3,7 @@
 const db = require('../database/models');
 let {Op} = require('sequelize');
 const Usuario = require('../database/models/Usuario');
+const { request } = require('express');
 
 const productController = {
     index: function(req,res){res.render('product',{productos: productos, usuario: usuarios, logueado: true})},
@@ -76,12 +77,13 @@ const productController = {
         const nuevoProducto = {
             modelo: req.body.modelo,
             descripcion: req.body.descripcion,
-            imagen_url: req.body.imagen_url,
+            user_id: req.session.auth,
+            imagen_url: req.file.filename,
             update_at: new Date(),
             create_at: new Date()
         }
-           res.send(req.file.filename)
-        /* db.Producto.findOne ({where:{modelo:nuevoProducto.modelo}}) 
+           
+        db.Producto.findOne ({where:{modelo:nuevoProducto.modelo}}) 
             .then (function (productoencontrado){
                 if (productoencontrado){
                     // crear logica de error producto existente 
@@ -93,7 +95,7 @@ const productController = {
                             res.redirect("/")
                         })
                 }
-            })*/
+            })
     },
 }
    

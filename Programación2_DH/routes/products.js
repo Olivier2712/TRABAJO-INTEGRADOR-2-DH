@@ -9,8 +9,14 @@ const storage = multer.diskStorage({
       cb(null, path.join(__dirname,'./../public/images/products'))
     },
     filename: function (req, file, cb) {
+      function tipodearchivo (archivo){
+        const archivocortado = archivo.mimetype.split("/")
+        const tipo = archivocortado[1]
+        return tipo
+      } 
+      console.log(file)
       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-      cb(null, file.fieldname + '-' + uniqueSuffix)
+      cb(null, "producto-"+ uniqueSuffix+ "."+ tipodearchivo(file))
     }
   })
   
