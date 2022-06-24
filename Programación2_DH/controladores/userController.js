@@ -82,9 +82,15 @@ const userController = {
 
         if (req.session.auth ) {
             const usuario = await db.Usuario.findByPk(req.session.auth.id)
-            console.log(usuario)
-            const productos = await usuario.getComentarios()
-            console.log(productos.length)
+            const comentarios = await usuario.getComentarios()
+            const productos = await usuario.getProductos()
+            const cantidadProductos = productos.length
+            const cantidadComentarios = comentarios.length
+            console.log(cantidadComentarios)
+
+            res.render("profile", {
+                usuario,cantidadComentarios,cantidadProductos,auth:req.session.auth,productos
+            })
         } else {
             res.redirect("/users/login")
         }

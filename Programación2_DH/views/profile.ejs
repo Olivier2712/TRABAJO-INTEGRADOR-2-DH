@@ -41,9 +41,9 @@
             <div>
                 <ul class="">
                     <li><%= usuario.email %></li>
-                    <li>Cantidad de productos: <%= cantidad_productos %></li>
+                    <li>Cantidad de productos: <%= cantidadProductos %></li>
                     <!-- <li>200 seguidores</li> -->
-                    <li>Cantidad de comentarios: <%= cantidad_comentarios%></li>
+                    <li>Cantidad de comentarios: <%= cantidadComentarios%></li>
                 </ul>
             </div>
         </div>
@@ -58,31 +58,30 @@
                 <h2 class="products-title">Mis productos</h2>
             </div>
             <!-- Show mis productos (HAY QUE HACER UN FOR ACA) -->
-            <% for(let i=0; i<10; i++) {%>
-                <div class="col-12 col-sm-6 col-lg-3">
-                <section class="product-box">
-                    <a href="/productos/<%= producto.lista[i].id %>">
-                        <figure class="product-box_image">
-                            <img src="/images/products/<%= producto.lista[i].imagen %>" alt="">
-                        </figure>
-                        <article class="product-box_data">
-                            <h2><%= producto.lista[i].modelo %></h2>
-                            <p> Parte
-                                superior sintética y de cuero premium
-                                Forro textil para transpirabilidad y comodidad
-                                Plantilla acolchada de espuma forrada con tela para amortiguación y comodidad
-                                Sistema de cordones clásico para un ajuste seguro y ajustable
-                                Suela de goma antideslizante duradera para un mejor agarre y tracción</p>
-                            <p>Comentarios: 12000</p>
-                        </article>
-                    </a>
-                </section>
-            </div>          
-            <% } %>
+            
         </div>
     </div>
     <!-- /Mis productos -->
- 
+    <% for(let producto of productos) {%>
+        <div class="col-12 col-sm-6 col-lg-3">
+        <section class="product-box">
+            <a href="/productos/detalle/<%= producto.id %>">
+                <figure class="product-box_image">
+                    <img src="<%= './images/products/'+ producto.imagen_url %>" alt="">
+                </figure>
+                <article class="product-box_data">
+                    <h2><%= producto.modelo %></h2>
+                    <p> <%= producto.descripcion %></p>
+                  
+                    <p>Comentarios: <%= cantidadComentarios %></p>
+                </article>
+                <ul>
+                    
+                </ul>
+            </a>
+        </section>
+    </div>          
+    <% } %>
  
     <!-- footer -->
     <%- include('../views/partials/footer.ejs')%>
